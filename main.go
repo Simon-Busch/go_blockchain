@@ -1,12 +1,13 @@
 package main
 import (
-	"fmt" 
+	"fmt"
 )
 func main() {
 	newblockchain := NewBlockchain()
 
-	newblockchain.AddBlock("first transaction")
-	newblockchain.AddBlock("Second transaction")
+	for i := 0; i < 50; i++ {
+		newblockchain.AddBlock(fmt.Sprintf("%d-th transaction", i))
+	}
 
 	for i, block := range newblockchain.Blocks {
 		fmt.Printf("Block ID : %d \n", i)
